@@ -55,15 +55,21 @@ export function AnimatedBackground({
   };
 
   return Children.map(children, (child, index) => {
-    const node = child as ReactElement<{
+    type ChildProps = {
       "data-id": string;
       className?: string;
       onClick?: (e: MouseEvent) => void;
+      onMouseEnter?: () => void;
+      onMouseLeave?: () => void;
+      "aria-pressed"?: boolean;
+      "data-checked"?: string;
       children?: ReactNode;
-    }>;
+    };
+
+    const node = child as ReactElement<ChildProps>;
     const id = node.props["data-id"];
 
-    const interactionProps = enableHover
+    const interactionProps: Partial<ChildProps> = enableHover
       ? {
           onMouseEnter: () => handleSetActiveId(id),
           onMouseLeave: () => handleSetActiveId(null),
@@ -83,7 +89,7 @@ export function AnimatedBackground({
         "aria-pressed": activeId === id,
         "data-checked": activeId === id ? "true" : "false",
         ...interactionProps,
-      },
+      } satisfies Partial<ChildProps> & { key: number },
       <>
         <AnimatePresence initial={false}>
           {activeId === id && (
