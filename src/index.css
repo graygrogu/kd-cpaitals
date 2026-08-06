@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 60 20% 98%;
+    --foreground: 218 74% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 218 74% 15%;
+    --primary: 218 74% 15%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 218 74% 15%;
+    --muted: 210 30% 96%;
+    --muted-foreground: 215 16% 45%;
+    --accent: 158 84% 34%;
+    --accent-foreground: 0 0% 100%;
+    --border: 214 25% 90%;
+    --input: 214 25% 90%;
+    --ring: 158 84% 34%;
+    --radius: 0.875rem;
+    --nav-h: 4.5rem; /* py-3.5 + logo/hamburger */
+  }
+
+  @media (min-width: 640px) {
+    :root { --nav-h: 4.75rem; }
+  }
+
+  @media (min-width: 768px) {
+    :root { --nav-h: 5.25rem; } /* py-5 + logo */
+  }
+
+  * { @apply border-border; }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--nav-h) + 0.75rem);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 { @apply font-display tracking-tight; }
+
+  a,
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  summary,
+  label[for],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled),
+  input[type="range"]:not(:disabled),
+  input[type="submit"]:not(:disabled),
+  input[type="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  [aria-disabled="true"],
+  input:disabled,
+  select:disabled {
+    cursor: not-allowed;
+  }
+
+  ::selection { @apply bg-brand-500/20 text-navy-900; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .section-pad { @apply py-14 sm:py-20 md:py-28; }
+
+  .eyebrow {
+    @apply inline-flex max-w-full items-center gap-2 rounded-full border border-navy-100 bg-white/70
+           px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-navy-600
+           shadow-ring backdrop-blur sm:px-3.5 sm:text-[11px];
+  }
+
+  .h1 { @apply text-[2rem] leading-[1.1] sm:text-4xl md:text-5xl lg:text-[3.85rem] font-extrabold text-navy-900; }
+  .h2 { @apply text-[1.6rem] leading-[1.15] sm:text-3xl md:text-4xl lg:text-[2.6rem] font-bold text-navy-900; }
+  .h3 { @apply text-lg sm:text-xl md:text-2xl font-bold text-navy-900; }
+  .lede { @apply text-[15px] sm:text-base md:text-lg leading-relaxed text-navy-600/90; }
+
+  .glass { @apply border border-white/60 bg-white/70 backdrop-blur-xl; }
+
+  .hairline { @apply h-px w-full bg-gradient-to-r from-transparent via-navy-200 to-transparent; }
+
+  /* Shared surface language — keep card/panel borders consistent site-wide */
+  .surface {
+    @apply rounded-2xl border border-navy-100 bg-white shadow-soft;
+  }
+
+  .surface-interactive {
+    @apply surface transition-all duration-300 ease-out
+           hover:-translate-y-1 hover:border-navy-200 hover:shadow-lift;
+  }
+
+  .control {
+    @apply border border-navy-200 bg-white transition-all duration-200 ease-out
+           hover:border-navy-300 hover:bg-sand-50;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  }
+}

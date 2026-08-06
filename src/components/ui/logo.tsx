@@ -1,0 +1,45 @@
+import { cn } from "@/lib/utils";
+
+export function Logo({ className, mono = false }: { className?: string; mono?: boolean }) {
+  return (
+    <span className={cn("inline-flex items-center gap-2 sm:gap-2.5", className)}>
+      <svg viewBox="0 0 40 40" className="size-8 shrink-0 sm:size-9" aria-hidden>
+        <rect width="40" height="40" rx="10" fill={mono ? "#FFFFFF" : "#0A1F44"} />
+        <path
+          d="M11.5 28V12h3.7v7.2l6.6-7.2h4.6l-6.6 7.2L27 28h-4.7l-4.9-6.5-2.2 2.3V28z"
+          fill={mono ? "#0A1F44" : "#FFFFFF"}
+        />
+        <circle cx="29.5" cy="14.5" r="2.8" fill="#0E9F6E" />
+      </svg>
+      <span className="flex min-w-0 flex-col leading-none">
+        <span className={cn("font-display text-[15px] font-extrabold tracking-tight sm:text-[17px]", mono ? "text-white" : "text-navy-900")}>
+          KD Capitals
+        </span>
+        <span className={cn("mt-0.5 text-[9px] font-semibold uppercase tracking-[0.14em] sm:text-[10px] sm:tracking-[0.16em]", mono ? "text-white/60" : "text-navy-400")}>
+          Loan Advisory
+        </span>
+      </span>
+    </span>
+  );
+}
+
+/** Neutral wordmark placeholder for lender logos.
+ *  Replace with official SVG assets from each institution's brand kit before launch. */
+export function LenderMark({ name }: { name: string }) {
+  const initials = name
+    .replace(/[^A-Za-z ]/g, "")
+    .split(" ")
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((w) => w[0])
+    .join("");
+
+  return (
+    <div className="flex h-14 shrink-0 items-center gap-3 rounded-xl border border-navy-100 bg-white px-5 shadow-ring transition-all duration-300 ease-out hover:border-navy-200 hover:shadow-soft">
+      <span className="grid size-8 place-items-center rounded-lg bg-navy-900/[0.06] font-display text-[13px] font-extrabold text-navy-700">
+        {initials}
+      </span>
+      <span className="whitespace-nowrap font-display text-sm font-bold tracking-tight text-navy-700">{name}</span>
+    </div>
+  );
+}
