@@ -94,11 +94,14 @@ export function TextReveal({
       variants={{ hidden: {}, show: { transition: { staggerChildren: 0.045, delayChildren: delay } } }}
     >
       {words.map((w, i) => (
-        <span key={`${w}-${i}`} className="inline-block overflow-hidden align-bottom">
+        <span
+          key={`${w}-${i}`}
+          className="inline-block overflow-hidden align-bottom pb-[0.22em] -mb-[0.22em] pt-[0.06em] -mt-[0.06em]"
+        >
           <motion.span
             className={cn("inline-block", wordClassName)}
             variants={{
-              hidden: { y: "108%", opacity: 0 },
+              hidden: { y: "130%", opacity: 0 },
               show: { y: 0, opacity: 1, transition: { duration: 0.75, ease: EASE } },
             }}
           >

@@ -39,33 +39,11 @@ export function Hero() {
 
             <h1 className="h1 mt-6 text-balance">
               <TextReveal text={t.hero.headline1} delay={0.12} />{" "}
-              <span className="relative inline-block">
-                <TextReveal
-                  text={t.hero.headline2}
-                  delay={0.34}
-                  wordClassName="bg-gradient-to-br from-brand-600 to-brand-500 bg-clip-text text-transparent"
-                />
-                <motion.svg
-                  viewBox="0 0 300 12"
-                  preserveAspectRatio="none"
-                  className="absolute -bottom-1 left-0 h-2.5 w-full text-brand-400/45"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 1.05 }}
-                  aria-hidden
-                >
-                  <motion.path
-                    d="M2 8 C 70 2, 150 2, 298 6"
-                    stroke="currentColor"
-                    strokeWidth="4"
-                    strokeLinecap="round"
-                    fill="none"
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: 1 }}
-                    transition={{ duration: 0.9, delay: 1.05, ease: EASE }}
-                  />
-                </motion.svg>
-              </span>
+              <TextReveal
+                text={t.hero.headline2}
+                delay={0.34}
+                wordClassName="bg-gradient-to-br from-brand-600 to-brand-500 bg-clip-text text-transparent"
+              />
             </h1>
 
             <motion.p
