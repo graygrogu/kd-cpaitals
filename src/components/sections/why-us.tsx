@@ -31,12 +31,12 @@ export function WhyUs() {
             <div className="mx-auto w-full max-w-sm lg:sticky lg:top-28">
               <div className="relative">
                 <div aria-hidden className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-brand-400/15 to-navy-500/10 blur-xl" />
-                {/* Portrait placeholder — drop in the real photo at /public/founder.jpg */}
-                <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-navy-100 bg-gradient-to-br from-navy-100 via-sand-100 to-brand-50 shadow-lift">
-                  <svg viewBox="0 0 200 250" className="absolute inset-0 size-full text-navy-900/15" aria-hidden>
-                    <circle cx="100" cy="88" r="40" fill="currentColor" />
-                    <path d="M30 250c0-42 31-72 70-72s70 30 70 72z" fill="currentColor" />
-                  </svg>
+                <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-navy-100 bg-navy-100 shadow-lift">
+                  <img
+                    src="/kinjal.jpg"
+                    alt={t.why.founderName}
+                    className="absolute inset-0 size-full object-cover object-[center_18%]"
+                  />
                   <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-900 via-navy-900/70 to-transparent px-6 pb-6 pt-16">
                     <p className="font-display text-xl font-extrabold text-white">{t.why.founderName}</p>
                     <p className="mt-1 text-[13px] font-semibold text-brand-300">{t.why.founderRole}</p>

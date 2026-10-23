@@ -108,7 +108,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.85, delay: 0.4, ease: EASE }}
           >
-            <div className="relative mx-auto w-full max-w-[440px] lg:pt-[4.75rem]">
+            <div className="relative mx-auto w-full max-w-[440px] lg:pb-[4.75rem] lg:pt-[4.75rem]">
               <div className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-gradient-to-br from-brand-400/12 via-transparent to-navy-500/10 blur-2xl" />
 
               <div className="overflow-hidden rounded-2xl border border-navy-100 bg-white shadow-lift">
@@ -169,7 +169,7 @@ export function Hero() {
               </motion.div>
 
               <motion.div
-                className="absolute -bottom-4 right-2 hidden rounded-2xl border border-navy-100 bg-white/95 px-4 py-3 shadow-lift backdrop-blur lg:block"
+                className="absolute bottom-0 right-2 hidden rounded-2xl border border-navy-100 bg-white/95 px-4 py-3 shadow-lift backdrop-blur lg:block"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.68, duration: 0.6, ease: EASE }}
