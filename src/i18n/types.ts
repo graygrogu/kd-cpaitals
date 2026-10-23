@@ -35,7 +35,7 @@ export interface Dict {
   hero: {
     eyebrow: string; headline1: string; headline2: string; sub: string; badges: string[];
     ctaPrimary: string; ctaSecondary: string; note: string; stats: Stat[];
-    cardTitle: string; cardRows: CardRow[]; cardFoot: string;
+    cardTitle: string; cardRows: CardRow[]; cardFoot: string; feeNote: string;
   };
   services: { eyebrow: string; heading: string; sub: string; groups: ServiceGroup[]; cta: string };
   compare: {
@@ -64,7 +64,7 @@ export interface Dict {
     years: string; months: string; monthlyEmi: string; principal: string; interest: string;
     total: string; disclaimer: string; cta: string; presets: string; presetItems: Preset[];
   };
-  social: { eyebrow: string; heading: string; sub: string; cta: string; handle: string; placeholders: string[] };
+  social: { eyebrow: string; heading: string; sub: string; cta: string; handle: string };
   contact: {
     eyebrow: string; heading: string; sub: string; steps: string[]; q1: string; loanTypes: string[];
     q2Amount: string; q2AmountHint: string; q2Income: string; q2IncomeHint: string;

@@ -70,7 +70,7 @@ export function Hero() {
                   <span className="grid size-5 shrink-0 place-items-center rounded-full bg-brand-500/12">
                     <Check className="size-3 text-brand-600" strokeWidth={3.5} />
                   </span>
-                  {b}
+                  <Marked text={b} />
                 </motion.li>
               ))}
             </motion.ul>
@@ -108,7 +108,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.85, delay: 0.4, ease: EASE }}
           >
-            <div className="relative mx-auto w-full max-w-[440px]">
+            <div className="relative mx-auto w-full max-w-[440px] lg:pt-[4.75rem]">
               <div className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-gradient-to-br from-brand-400/12 via-transparent to-navy-500/10 blur-2xl" />
 
               <div className="overflow-hidden rounded-2xl border border-navy-100 bg-white shadow-lift">
@@ -152,9 +152,9 @@ export function Hero() {
 
               {/* floating trust chips */}
               <motion.div
-                className="absolute left-2 top-1/3 hidden rounded-2xl border border-navy-100 bg-white/95 px-4 py-3 shadow-lift backdrop-blur lg:block"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
+                className="absolute left-3 top-0 z-10 hidden rounded-2xl border border-navy-100 bg-white/95 px-4 py-3 shadow-lift backdrop-blur lg:block"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.5, duration: 0.6, ease: EASE }}
               >
                 <div className="flex items-center gap-2.5">
@@ -198,7 +198,8 @@ export function Hero() {
           {t.hero.stats.map((s) => (
             <div key={s.label} className="bg-white px-3 py-5 text-center sm:px-5 sm:py-6 md:px-6 md:py-7">
               <p className="font-display text-[1.35rem] font-extrabold tracking-tight text-navy-900 sm:text-[1.6rem] md:text-3xl">
-                <NumberTicker value={s.value} prefix={s.prefix} suffix={s.suffix} />
+                <NumberTicker value={s.value} prefix={s.prefix} suffix={s.suffix === "*" ? "" : s.suffix} />
+                {s.suffix === "*" && <sup className="ml-0.5 text-[0.55em] font-bold">*</sup>}
               </p>
               <p className="mt-1.5 text-[11px] font-semibold uppercase leading-snug tracking-wider text-navy-400 sm:text-[12px] md:text-[13px]">
                 {s.label}
@@ -206,7 +207,18 @@ export function Hero() {
             </div>
           ))}
         </motion.div>
+        <p className="mt-3 text-center text-[12px] leading-relaxed text-navy-400">{t.hero.feeNote}</p>
       </div>
     </section>
+  );
+}
+
+function Marked({ text }: { text: string }) {
+  if (!text.endsWith("*")) return text;
+  return (
+    <>
+      {text.slice(0, -1)}
+      <sup className="ml-0.5 text-[0.7em] font-bold leading-none">*</sup>
+    </>
   );
 }

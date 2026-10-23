@@ -6,12 +6,13 @@ export const en: Dict = {
   brand: {
     name: "KD Capitals",
     tagline: "Loan Advisory",
-    phone: "+91 98765 43210",
-    phoneHref: "+919876543210",
-    whatsapp: "919876543210",
-    email: "hello@kdcapitals.in",
-    address: "Mumbai, Maharashtra, India",
-    instagram: "https://instagram.com/kdcapitals",
+    phone: "+91-9987603903",
+    phoneHref: "+919987603903",
+    whatsapp: "919987603903",
+    email: "kdcapitals.9@gmail.com",
+    address:
+      "407, 408, 409, Lets Work, Runwal Square, Lal Bahadur Shastri Marg, next to Runwal Anthurium, Vardhman Nagar, Mulund West, Mumbai, Maharashtra 400080",
+    instagram: "https://www.instagram.com/kdcapitals9/",
     linkedin: "https://linkedin.com/company/kdcapitals",
   },
 
@@ -37,7 +38,7 @@ export const en: Dict = {
     badges: [
       "Better Interest Negotiation",
       "Higher Eligibility Structuring",
-      "Zero Fees on Home Loans",
+      "Zero Fees on Home Loans*",
       "End-to-End Handholding",
     ],
     ctaPrimary: "Check Your Loan Eligibility",
@@ -45,9 +46,9 @@ export const en: Dict = {
     note: "Free assessment · No obligation · Your data stays private",
     stats: [
       { value: 30, suffix: "+", label: "Banks & NBFCs" },
-      { value: 500, prefix: "₹", suffix: " Cr+", label: "Funding Facilitated" },
+      { value: 180, prefix: "₹", suffix: " Cr+", label: "Funding Facilitated" },
       { value: 100, suffix: "%", label: "Transparent Advisory" },
-      { value: 0, prefix: "₹", label: "Fees on Home Loans" },
+      { value: 0, prefix: "₹", suffix: "*", label: "Fees on Home Loans" },
     ],
     cardTitle: "Your case, structured",
     cardRows: [
@@ -56,6 +57,7 @@ export const en: Dict = {
       { label: "After structuring", value: "₹1.25 Cr", tone: "good" },
     ],
     cardFoot: "Same profile. Different strategy.",
+    feeNote: "* No advisory fee on home loans — the bank compensates us.",
   },
 
   services: {
@@ -122,7 +124,7 @@ export const en: Dict = {
     ],
     feeTitle: "Complete fee transparency",
     fee: [
-      { label: "Home Loans & Loan Against Property", value: "₹0 from you", desc: "We charge no fees from clients — banks compensate us for sourcing and advisory support." },
+      { label: "Home Loans & Loan Against Property", value: "₹0 from you*", desc: "We charge no fees from clients — banks compensate us for sourcing and advisory support." },
       { label: "MSME & Working Capital funding", value: "Professional fee", desc: "Our negotiation on rates, structuring of OD limits and eligibility enhancement typically results in significant net savings over the loan tenure." },
     ],
     punch1: "Banks process applications.",
@@ -347,23 +349,23 @@ export const en: Dict = {
     items: [
       {
         quote: "Earlier, the banker promised one rate and terms, but at disbursement stage conditions changed. Due to urgency I had to proceed and ended up paying higher interest. Later I approached KD Capitals — they not only reduced my interest rate but also handled a smooth loan transfer to a better bank. The process was transparent, fast and professionally managed. I saved both time and money.",
-        name: "Engineer",
+        name: "Parth Shah (Engineer)",
         role: "Loan transfer & cost saving",
       },
       {
         quote: "I was always afraid of loan paperwork and technical terms. CA Darshil Mehta and CA Kinjal Shah patiently explained everything multiple times until I was fully confident. They structured my first working capital limit and guided me at every step. It felt like having a personal finance team for my business.",
-        name: "Business Owner",
+        name: "Anuj Vora (Business Owner)",
         role: "First working capital limit",
       },
       {
         quote: "We were stuck with multiple expensive unsecured loans. KD Capitals restructured our entire funding and arranged a large working capital limit at almost half the interest cost. The financial relief and improved cash flow changed the way we operate.",
-        name: "MSME Client",
+        name: "Shivay Kumar (MSME Client)",
         role: "Interest reduction case",
       },
       {
-        quote: "I had a great experience working with Kinjal for securing a personal loan of ₹6 lakhs. The entire process was handled quickly and completely hassle-free. She was highly professional, responsive, and guided me clearly through every step, making what usually feels like a complicated process very smooth and stress-free. Her efficiency and attention to detail ensured everything was completed without delays. I would highly recommend her services to anyone looking for reliable financial assistance and expert guidance.",
+        quote: "I had a great experience working with Kinjal for securing a personal loan. The entire process was handled quickly and completely hassle-free. She was highly professional, responsive, and guided me clearly through every step, making what usually feels like a complicated process very smooth and stress-free. Her efficiency and attention to detail ensured everything was completed without delays. I would highly recommend her services to anyone looking for reliable financial assistance and expert guidance.",
         name: "Akshay Gahrat",
-        role: "Personal loan — ₹6 Lakhs",
+        role: "Personal loan",
       },
       {
         quote: "Hey Kinjal. You helped us a lot and processed the loan. Thank you so much!",
@@ -412,15 +414,7 @@ export const en: Dict = {
     heading: "Insights, tips & real client wins — follow our journey",
     sub: "Practical loan education in plain language, every week.",
     cta: "Follow on Instagram",
-    handle: "@kdcapitals",
-    placeholders: [
-      "How to read your CIBIL report",
-      "OD vs Term Loan — which is cheaper?",
-      "5 documents to keep ready",
-      "What is CGTMSE?",
-      "Home loan: fixed or floating?",
-      "Why your loan got rejected",
-    ],
+    handle: "@kdcapitals9",
   },
 
   contact: {

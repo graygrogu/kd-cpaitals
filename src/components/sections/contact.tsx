@@ -349,13 +349,13 @@ export function Contact() {
                     </span>
                   </a>
                   <div className="hairline" />
-                  <div className="flex items-center gap-3.5">
+                  <div className="flex items-start gap-3.5">
                     <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-navy-900/[0.06] text-navy-700">
                       <MapPin className="size-[18px]" strokeWidth={2} />
                     </span>
-                    <span className="leading-tight">
+                    <span className="min-w-0 leading-tight">
                       <span className="block text-[12px] font-semibold uppercase tracking-wide text-navy-400">Office</span>
-                      <span className="font-display text-[15px] font-bold text-navy-900">{t.brand.address}</span>
+                      <span className="block font-display text-[14px] font-bold leading-snug text-navy-900">{t.brand.address}</span>
                     </span>
                   </div>
                 </div>

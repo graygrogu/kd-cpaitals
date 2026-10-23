@@ -124,7 +124,16 @@ export function WhyNotBanks() {
                   className="rounded-xl border border-navy-100 bg-white p-6 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-navy-200 hover:shadow-soft"
                 >
                   <p className="text-[13px] font-semibold uppercase tracking-wide text-navy-400">{f.label}</p>
-                  <p className="mt-2 font-display text-2xl font-extrabold text-brand-600">{f.value}</p>
+                  <p className="mt-2 font-display text-2xl font-extrabold text-brand-600">
+                    {f.value.endsWith("*") ? (
+                      <>
+                        {f.value.slice(0, -1)}
+                        <sup className="ml-0.5 text-[0.55em]">*</sup>
+                      </>
+                    ) : (
+                      f.value
+                    )}
+                  </p>
                   <p className="mt-3 text-[14px] leading-relaxed text-navy-600">{f.desc}</p>
                 </div>
               ))}

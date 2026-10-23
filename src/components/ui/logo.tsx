@@ -23,23 +23,44 @@ export function Logo({ className, mono = false }: { className?: string; mono?: b
   );
 }
 
-/** Neutral wordmark placeholder for lender logos.
- *  Replace with official SVG assets from each institution's brand kit before launch. */
+/** Official marks for the lender strip. Names match `lenders.list` in the copy files. */
+const LENDER_LOGOS: Record<string, { src: string; dark?: boolean; img?: string }> = {
+  "HDFC Bank": { src: "/lenders/hdfc.svg" },
+  "ICICI Bank": { src: "/lenders/icici.svg" },
+  "State Bank of India": { src: "/lenders/sbi.svg", img: "h-11" },
+  "Axis Bank": { src: "/lenders/axis.svg" },
+  "Kotak Mahindra Bank": { src: "/lenders/kotak.svg" },
+  "Bank of Baroda": { src: "/lenders/bob.png", img: "h-12" },
+  "IndusInd Bank": { src: "/lenders/indusind.svg" },
+  "Yes Bank": { src: "/lenders/yes.svg" },
+  "Bajaj Finserv": { src: "/lenders/bajaj.svg" },
+  "Tata Capital": { src: "/lenders/tata.png" },
+  "Aditya Birla Finance": { src: "/lenders/aditya-birla.jpg", img: "h-14" },
+  "L&T Finance": { src: "/lenders/lt-finance.svg" },
+  "Piramal Finance": { src: "/lenders/piramal.svg", dark: true },
+  "Fullerton India": { src: "/lenders/fullerton.svg" },
+  "Hero FinCorp": { src: "/lenders/hero.png", dark: true },
+};
+
 export function LenderMark({ name }: { name: string }) {
-  const initials = name
-    .replace(/[^A-Za-z ]/g, "")
-    .split(" ")
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((w) => w[0])
-    .join("");
+  const logo = LENDER_LOGOS[name];
 
   return (
-    <div className="flex h-14 shrink-0 items-center gap-3 rounded-xl border border-navy-100 bg-white px-5 shadow-ring transition-all duration-300 ease-out hover:border-navy-200 hover:shadow-soft">
-      <span className="grid size-8 place-items-center rounded-lg bg-navy-900/[0.06] font-display text-[13px] font-extrabold text-navy-700">
-        {initials}
-      </span>
-      <span className="whitespace-nowrap font-display text-sm font-bold tracking-tight text-navy-700">{name}</span>
+    <div
+      className={cn(
+        "flex h-[4.5rem] w-[12.5rem] shrink-0 items-center justify-center rounded-xl border px-4 shadow-ring transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-soft",
+        logo?.dark ? "border-neutral-800 bg-neutral-950" : "border-navy-100 bg-white hover:border-navy-200",
+      )}
+    >
+      {logo ? (
+        <img
+          src={logo.src}
+          alt={name}
+          className={cn("w-auto max-w-[10.5rem] object-contain", logo.img ?? "h-10")}
+        />
+      ) : (
+        <span className="whitespace-nowrap font-display text-sm font-bold tracking-tight text-navy-700">{name}</span>
+      )}
     </div>
   );
 }
